@@ -1,0 +1,28 @@
+CREATE TABLE friends (
+  id INTEGER PRIMARY KEY,
+  name TEXT,
+  bd DATE
+);
+
+INSERT INTO friends (id, name, bd)
+VALUES (1, 'Ororo Munroe', '1940-05-30');
+
+INSERT INTO friends (id, name, bd)
+VALUES (2, 'Ostap Ukraine', '2002-09-09'), (3, 'Marc Super', '2000-11-30');
+
+UPDATE friends
+SET name = 'Storm Munroe'
+WHERE id = 1;
+
+ALTER TABLE friends
+ADD COLUMN email TEXT default "emptyemail@gmail.com";
+
+UPDATE friends
+SET email = 'storm@codeacademy.com'
+WHERE id = 1;
+
+DELETE FROM friends
+WHERE name = 'Storm Munroe';
+
+SELECT *
+FROM friends;

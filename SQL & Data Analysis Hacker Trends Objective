@@ -31,3 +31,15 @@
  select timestamp
  from hacker_news
  limit 10;
+
+ select timestamp,
+  strftime('%H', timestamp) as testformat
+ from hacker_news
+ group by 1
+ limit 20;
+
+ select strftime('%H', timestamp) as Hours,
+  round(avg(score), 2) as AverageScore, count(*) as Stories
+ from hacker_news
+ where Hours IS NOT NULL
+ group by 1;

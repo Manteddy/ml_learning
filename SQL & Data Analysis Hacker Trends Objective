@@ -1,0 +1,33 @@
+ /*select title, score
+ from hacker_news
+ order by score desc
+ limit 5;
+
+ select sum(score) as TotalScore
+ from hacker_news;
+
+ select user, sum(score) as userscore
+ from hacker_news
+ group by user
+ having userscore>200;
+
+ select (309 + 304 + 282 + 517)/ 6366.0 as '1-9-90 rule check'; --no, it is not dominated, they only account for 22%
+
+ select user, count(timestamp) as 'Offending URL used'
+ from hacker_news
+ where url = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
+ group by 1; */
+
+ select case
+  when url like '%github.com%' then 'GitHub'
+  when url like '%medium.com%' then 'Medium'
+  when url like '%nytimes.com%' then 'NyTimes'
+  else 'Other'
+  end as source,
+ count(*)
+ from hacker_news
+ group by 1;
+
+ select timestamp
+ from hacker_news
+ limit 10;

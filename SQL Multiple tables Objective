@@ -1,0 +1,51 @@
+/*SELECT * FROM trips;
+SELECT * FROM riders;
+SELECT * FROM cars;
+
+select *
+from riders
+cross join cars;
+
+select *
+from trips
+left join riders
+on trips.rider_id = riders.id;*/
+
+/*select trips.date, 
+   trips.pickup, 
+   trips.dropoff, 
+   trips.type, 
+   trips.cost,
+   riders.first, 
+   riders.last,
+   riders.username
+from trips
+left join riders 
+  on trips.rider_id = riders.id;
+
+select *
+from trips
+inner join cars
+on trips.car_id = cars.id;
+
+select * 
+from riders
+union
+select *
+from riders2;*/
+
+select round(avg(cost), 2)
+from trips;
+
+select *
+from riders
+where total_trips < 500;
+
+select count(*) as Active_cars
+from cars
+where status = 'active';
+
+select *
+from cars
+order by trips_completed desc
+limit 2;
